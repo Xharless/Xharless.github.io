@@ -1,0 +1,5 @@
+{
+  "astro": {
+    "bindingPrefix": "_astro_internal_"
+  }
+}
