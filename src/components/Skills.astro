@@ -1,93 +1,179 @@
 ---
 ---
 
-<section id="habilidades" class="py-24 bg-dark-800/50">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="mb-16 animate-slide-up">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-dark-50">Habilidades</h2>
-      <div class="w-20 h-1 bg-accent-primary rounded-full"></div>
+<section id="habilidades" class="py-32 px-6 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto">
+    <!-- Título -->
+    <div class="mb-20 text-center">
+      <h2 class="text-5xl md:text-6xl font-bold mb-6 text-dark-50">
+        Tecnologías & Lenguajes
+      </h2>
+      <p class="text-dark-400 text-lg max-w-2xl mx-auto">
+        Herramientas y tecnologías que domino para crear experiencias excepcionales
+      </p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-16">
-      <div class="group p-6 bg-dark-800 rounded-xl border border-dark-700 hover:border-accent-primary/50 transition-all duration-300 text-center hover:bg-dark-700/50 cursor-pointer animate-scale-in" style="animation-delay: 0s;">
-        <div class="w-16 h-16 bg-accent-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-2xl">🚀</span>
+    <!-- Grid de lenguajes innovador -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
+      <!-- Card JavaScript -->
+      <div class="group relative glass rounded-2xl p-6 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden h-32 flex flex-col justify-center items-center cursor-pointer animate-fade-in" style="animation-delay: 0s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 text-center">
+          <div class="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🟨</div>
+          <p class="font-semibold text-dark-100 group-hover:text-accent-primary transition-colors">JavaScript</p>
+          <p class="text-sm text-dark-400">ES6+</p>
         </div>
-        <h3 class="font-semibold text-dark-50 mb-2">Astro</h3>
-        <p class="text-sm text-dark-400">Experto</p>
       </div>
 
-      <div class="group p-6 bg-dark-800 rounded-xl border border-dark-700 hover:border-accent-primary/50 transition-all duration-300 text-center hover:bg-dark-700/50 cursor-pointer animate-scale-in" style="animation-delay: 0.1s;">
-        <div class="w-16 h-16 bg-accent-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-2xl">⚛️</span>
+      <!-- Card TypeScript -->
+      <div class="group relative glass rounded-2xl p-6 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden h-32 flex flex-col justify-center items-center cursor-pointer animate-fade-in" style="animation-delay: 0.1s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 text-center">
+          <div class="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🔵</div>
+          <p class="font-semibold text-dark-100 group-hover:text-accent-primary transition-colors">TypeScript</p>
+          <p class="text-sm text-dark-400">Tipado</p>
         </div>
-        <h3 class="font-semibold text-dark-50 mb-2">React</h3>
-        <p class="text-sm text-dark-400">Experto</p>
       </div>
 
-      <div class="group p-6 bg-dark-800 rounded-xl border border-dark-700 hover:border-accent-primary/50 transition-all duration-300 text-center hover:bg-dark-700/50 cursor-pointer animate-scale-in" style="animation-delay: 0.2s;">
-        <div class="w-16 h-16 bg-accent-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-2xl">🎨</span>
+      <!-- Card React -->
+      <div class="group relative glass rounded-2xl p-6 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden h-32 flex flex-col justify-center items-center cursor-pointer animate-fade-in" style="animation-delay: 0.2s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 text-center">
+          <div class="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">⚛️</div>
+          <p class="font-semibold text-dark-100 group-hover:text-accent-primary transition-colors">React</p>
+          <p class="text-sm text-dark-400">Componentes</p>
         </div>
-        <h3 class="font-semibold text-dark-50 mb-2">Tailwind</h3>
-        <p class="text-sm text-dark-400">Experto</p>
       </div>
 
-      <div class="group p-6 bg-dark-800 rounded-xl border border-dark-700 hover:border-accent-primary/50 transition-all duration-300 text-center hover:bg-dark-700/50 cursor-pointer animate-scale-in" style="animation-delay: 0.3s;">
-        <div class="w-16 h-16 bg-accent-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-2xl">🔧</span>
+      <!-- Card Astro -->
+      <div class="group relative glass rounded-2xl p-6 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden h-32 flex flex-col justify-center items-center cursor-pointer animate-fade-in" style="animation-delay: 0.3s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 text-center">
+          <div class="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🚀</div>
+          <p class="font-semibold text-dark-100 group-hover:text-accent-primary transition-colors">Astro</p>
+          <p class="text-sm text-dark-400">SSG Rápido</p>
         </div>
-        <h3 class="font-semibold text-dark-50 mb-2">TypeScript</h3>
-        <p class="text-sm text-dark-400">Experto</p>
       </div>
 
-      <div class="group p-6 bg-dark-800 rounded-xl border border-dark-700 hover:border-accent-primary/50 transition-all duration-300 text-center hover:bg-dark-700/50 cursor-pointer animate-scale-in" style="animation-delay: 0.4s;">
-        <div class="w-16 h-16 bg-accent-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-2xl">🗄️</span>
+      <!-- Card Tailwind -->
+      <div class="group relative glass rounded-2xl p-6 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden h-32 flex flex-col justify-center items-center cursor-pointer animate-fade-in" style="animation-delay: 0.4s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 text-center">
+          <div class="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🎨</div>
+          <p class="font-semibold text-dark-100 group-hover:text-accent-primary transition-colors">Tailwind</p>
+          <p class="text-sm text-dark-400">CSS Utility</p>
         </div>
-        <h3 class="font-semibold text-dark-50 mb-2">Node.js</h3>
-        <p class="text-sm text-dark-400">Experto</p>
       </div>
 
-      <div class="group p-6 bg-dark-800 rounded-xl border border-dark-700 hover:border-accent-primary/50 transition-all duration-300 text-center hover:bg-dark-700/50 cursor-pointer animate-scale-in" style="animation-delay: 0.5s;">
-        <div class="w-16 h-16 bg-accent-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-2xl">📦</span>
+      <!-- Card Node.js -->
+      <div class="group relative glass rounded-2xl p-6 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden h-32 flex flex-col justify-center items-center cursor-pointer animate-fade-in" style="animation-delay: 0.5s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 text-center">
+          <div class="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🟩</div>
+          <p class="font-semibold text-dark-100 group-hover:text-accent-primary transition-colors">Node.js</p>
+          <p class="text-sm text-dark-400">Backend</p>
         </div>
-        <h3 class="font-semibold text-dark-50 mb-2">MongoDB</h3>
-        <p class="text-sm text-dark-400">Experto</p>
+      </div>
+
+      <!-- Card MongoDB -->
+      <div class="group relative glass rounded-2xl p-6 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden h-32 flex flex-col justify-center items-center cursor-pointer animate-fade-in" style="animation-delay: 0.6s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 text-center">
+          <div class="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">🍃</div>
+          <p class="font-semibold text-dark-100 group-hover:text-accent-primary transition-colors">MongoDB</p>
+          <p class="text-sm text-dark-400">NoSQL</p>
+        </div>
+      </div>
+
+      <!-- Card Git -->
+      <div class="group relative glass rounded-2xl p-6 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden h-32 flex flex-col justify-center items-center cursor-pointer animate-fade-in" style="animation-delay: 0.7s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 text-center">
+          <div class="text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">📦</div>
+          <p class="font-semibold text-dark-100 group-hover:text-accent-primary transition-colors">Git</p>
+          <p class="text-sm text-dark-400">Versionado</p>
+        </div>
       </div>
     </div>
 
-    <div class="space-y-6">
-      <div class="animate-slide-up" style="animation-delay: 0.1s;">
-        <div class="flex items-center justify-between mb-3">
-          <h4 class="font-semibold text-dark-50">Frontend</h4>
-          <span class="text-sm font-semibold text-accent-primary">95%</span>
-        </div>
-        <div class="w-full h-2 bg-dark-700 rounded-full overflow-hidden">
-          <div class="h-full bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full w-[95%] transition-all duration-1000"></div>
+    <!-- Divider -->
+    <div class="h-px bg-gradient-to-r from-transparent via-dark-700 to-transparent my-16"></div>
+
+    <!-- Compatibilidades -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Frameworks -->
+      <div class="glass rounded-2xl p-8 border border-dark-700 hover:border-dark-600 transition-all duration-300 animate-slide-up">
+        <h3 class="text-xl font-bold text-dark-50 mb-6 flex items-center gap-2">
+          <span class="text-2xl">⚙️</span> Frameworks & Librerías
+        </h3>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between p-3 rounded-lg bg-dark-800/30 hover:bg-dark-800/60 transition-colors">
+            <span class="text-dark-300">React.js</span>
+            <div class="w-24 h-2 bg-dark-800 rounded-full overflow-hidden">
+              <div class="h-full bg-accent-primary/60" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-3 rounded-lg bg-dark-800/30 hover:bg-dark-800/60 transition-colors">
+            <span class="text-dark-300">Next.js</span>
+            <div class="w-24 h-2 bg-dark-800 rounded-full overflow-hidden">
+              <div class="h-full bg-accent-primary/60" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-3 rounded-lg bg-dark-800/30 hover:bg-dark-800/60 transition-colors">
+            <span class="text-dark-300">Express</span>
+            <div class="w-24 h-2 bg-dark-800 rounded-full overflow-hidden">
+              <div class="h-full bg-accent-primary/60" style="width: 90%"></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="animate-slide-up" style="animation-delay: 0.2s;">
-        <div class="flex items-center justify-between mb-3">
-          <h4 class="font-semibold text-dark-50">Backend</h4>
-          <span class="text-sm font-semibold text-accent-primary">85%</span>
-        </div>
-        <div class="w-full h-2 bg-dark-700 rounded-full overflow-hidden">
-          <div class="h-full bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full w-[85%] transition-all duration-1000"></div>
-        </div>
-      </div>
-
-      <div class="animate-slide-up" style="animation-delay: 0.3s;">
-        <div class="flex items-center justify-between mb-3">
-          <h4 class="font-semibold text-dark-50">UI/UX Design</h4>
-          <span class="text-sm font-semibold text-accent-primary">90%</span>
-        </div>
-        <div class="w-full h-2 bg-dark-700 rounded-full overflow-hidden">
-          <div class="h-full bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full w-[90%] transition-all duration-1000"></div>
+      <!-- Herramientas -->
+      <div class="glass rounded-2xl p-8 border border-dark-700 hover:border-dark-600 transition-all duration-300 animate-slide-up" style="animation-delay: 0.2s;">
+        <h3 class="text-xl font-bold text-dark-50 mb-6 flex items-center gap-2">
+          <span class="text-2xl">🛠️</span> Herramientas & Plataformas
+        </h3>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between p-3 rounded-lg bg-dark-800/30 hover:bg-dark-800/60 transition-colors">
+            <span class="text-dark-300">VS Code</span>
+            <div class="w-24 h-2 bg-dark-800 rounded-full overflow-hidden">
+              <div class="h-full bg-accent-primary/60" style="width: 100%"></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-3 rounded-lg bg-dark-800/30 hover:bg-dark-800/60 transition-colors">
+            <span class="text-dark-300">GitHub</span>
+            <div class="w-24 h-2 bg-dark-800 rounded-full overflow-hidden">
+              <div class="h-full bg-accent-primary/60" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-3 rounded-lg bg-dark-800/30 hover:bg-dark-800/60 transition-colors">
+            <span class="text-dark-300">Docker</span>
+            <div class="w-24 h-2 bg-dark-800 rounded-full overflow-hidden">
+              <div class="h-full bg-accent-primary/60" style="width: 80%"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Intersection Observer para animaciones al scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('[class*="animate-"]').forEach(el => {
+    observer.observe(el);
+  });
+</script>
