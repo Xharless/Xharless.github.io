@@ -1,83 +1,114 @@
 ---
 ---
 
-<section id="proyectos" class="py-24 bg-black/50">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="mb-16 animate-slide-up">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">Proyectos</h2>
-      <div class="w-20 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full"></div>
+<section id="proyectos" class="py-32 px-6 bg-black relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-accent-secondary/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <!-- Header -->
+    <div class="mb-20 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        Proyectos Destacados
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto font-light">
+        Algunos de los proyectos más impactantes que he desarrollado con diferentes tecnologías
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="group relative glass rounded-2xl overflow-hidden border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 cursor-pointer animate-scale-in hover:shadow-2xl hover:shadow-accent-primary/10" style="animation-delay: 0s;">
-        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div class="h-40 bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 border-b border-dark-700 flex items-center justify-center overflow-hidden relative">
-          <span class="text-5xl group-hover:scale-120 transition-transform duration-300 z-10">💼</span>
+    <!-- Projects Featured Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+      <!-- Project 1 - Featured Large -->
+      <div class="group lg:col-span-1 glass rounded-2xl overflow-hidden border border-gray-800 hover:border-accent-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent-primary/10 animate-scale-in" style="animation-delay: 0s;">
+        <div class="h-56 bg-gradient-to-br from-accent-primary/30 to-accent-secondary/20 border-b border-gray-800 flex items-center justify-center overflow-hidden relative group">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <span class="text-6xl group-hover:scale-110 transition-transform duration-300 z-10">💼</span>
         </div>
-        <div class="p-6 relative z-10">
-          <h3 class="text-lg font-semibold mb-2 text-white">Plataforma SaaS</h3>
-          <p class="text-gray-400 text-sm mb-4">Gestión de proyectos con autenticación y panel en tiempo real.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-accent-primary/10 text-accent-primary text-xs font-semibold rounded-full border border-accent-primary/20">React</span>
-            <span class="px-3 py-1 bg-accent-primary/10 text-accent-primary text-xs font-semibold rounded-full border border-accent-primary/20">Node.js</span>
+        <div class="p-8 relative z-10">
+          <div class="mb-4">
+            <h3 class="text-2xl font-bold text-white mb-2">Plataforma SaaS Enterprise</h3>
+            <p class="text-gray-400 font-light leading-relaxed">
+              Plataforma completa de gestión de proyectos con autenticación avanzada, panel en tiempo real y API robusta para integraciones.
+            </p>
           </div>
-          <a href="#" class="inline-flex items-center text-accent-primary hover:text-accent-secondary transition-colors group/link text-sm font-semibold">
-            Explorar
-            <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20">React</span>
+            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20">Node.js</span>
+            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20">MongoDB</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-accent-primary hover:text-accent-secondary transition-colors group/link font-semibold">
+            Ver proyecto en vivo
+            <svg class="w-5 h-5 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
           </a>
         </div>
       </div>
 
-      <div class="group relative glass rounded-2xl overflow-hidden border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 cursor-pointer animate-scale-in hover:shadow-2xl hover:shadow-accent-primary/10" style="animation-delay: 0.1s;">
-        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div class="h-40 bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 border-b border-dark-700 flex items-center justify-center overflow-hidden relative">
-          <span class="text-5xl group-hover:scale-120 transition-transform duration-300 z-10">🎨</span>
+      <!-- Project 2 -->
+      <div class="group glass rounded-2xl overflow-hidden border border-gray-800 hover:border-accent-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent-primary/10 animate-scale-in" style="animation-delay: 0.1s;">
+        <div class="h-56 bg-gradient-to-br from-accent-primary/30 to-accent-secondary/20 border-b border-gray-800 flex items-center justify-center overflow-hidden relative group">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <span class="text-6xl group-hover:scale-110 transition-transform duration-300 z-10">🎨</span>
         </div>
-        <div class="p-6 relative z-10">
-          <h3 class="text-lg font-semibold mb-2 text-white">Portafolio Web</h3>
-          <p class="text-gray-400 text-sm mb-4">Sitio responsivo con diseño moderno y animaciones.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-accent-primary/10 text-accent-primary text-xs font-semibold rounded-full border border-accent-primary/20">Astro</span>
-            <span class="px-3 py-1 bg-accent-primary/10 text-accent-primary text-xs font-semibold rounded-full border border-accent-primary/20">Tailwind</span>
+        <div class="p-8 relative z-10">
+          <div class="mb-4">
+            <h3 class="text-2xl font-bold text-white mb-2">Portafolio Personal</h3>
+            <p class="text-gray-400 font-light leading-relaxed">
+              Sitio responsivo con diseño moderno, animaciones fluidas y arquitectura optimizada para rendimiento máximo.
+            </p>
           </div>
-          <a href="#" class="inline-flex items-center text-accent-primary hover:text-accent-secondary transition-colors group/link text-sm font-semibold">
-            Explorar
-            <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="group relative glass rounded-2xl overflow-hidden border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 cursor-pointer animate-scale-in hover:shadow-2xl hover:shadow-accent-primary/10" style="animation-delay: 0.2s;">
-        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div class="h-40 bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 border-b border-dark-700 flex items-center justify-center overflow-hidden relative">
-          <span class="text-5xl group-hover:scale-120 transition-transform duration-300 z-10">📱</span>
-        </div>
-        <div class="p-6 relative z-10">
-          <h3 class="text-lg font-semibold mb-2 text-white">App Móvil</h3>
-          <p class="text-gray-400 text-sm mb-4">Aplicación nativa con sincronización en la nube.</p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-accent-primary/10 text-accent-primary text-xs font-semibold rounded-full border border-accent-primary/20">React Native</span>
-            <span class="px-3 py-1 bg-accent-primary/10 text-accent-primary text-xs font-semibold rounded-full border border-accent-primary/20">Firebase</span>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20">Astro</span>
+            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20">Tailwind</span>
           </div>
-          <a href="#" class="inline-flex items-center text-accent-primary hover:text-accent-secondary transition-colors group/link text-sm font-semibold">
-            Explorar
-            <svg class="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          <a href="#" class="inline-flex items-center text-accent-primary hover:text-accent-secondary transition-colors group/link font-semibold">
+            Ver código
+            <svg class="w-5 h-5 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
             </svg>
           </a>
         </div>
       </div>
     </div>
 
-    <div class="mt-12 text-center animate-slide-up" style="animation-delay: 0.3s;">
-      <a href="#proyectos" class="inline-flex items-center px-8 py-3 bg-accent-primary text-black rounded-lg font-semibold hover:bg-accent-primary/90 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-accent-primary/30">
-        Ver Más Proyectos
-        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+    <!-- Project 3 - Full Width -->
+    <div class="group glass rounded-2xl overflow-hidden border border-gray-800 hover:border-accent-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-accent-primary/10 animate-scale-in mb-8" style="animation-delay: 0.2s;">
+      <div class="lg:grid lg:grid-cols-3">
+        <div class="lg:col-span-1 h-56 lg:h-full bg-gradient-to-br from-accent-primary/30 to-accent-secondary/20 border-b lg:border-b-0 lg:border-r border-gray-800 flex items-center justify-center overflow-hidden relative group">
+          <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/40 to-transparent"></div>
+          <span class="text-6xl group-hover:scale-110 transition-transform duration-300 z-10">📱</span>
+        </div>
+        <div class="lg:col-span-2 p-8 relative z-10">
+          <h3 class="text-2xl font-bold text-white mb-2">Aplicación Móvil Cross-Platform</h3>
+          <p class="text-gray-400 font-light leading-relaxed mb-6">
+            Aplicación nativa funcionando en iOS y Android con sincronización en tiempo real en la nube, notificaciones push y experiencia offline completa.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20">React Native</span>
+            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20">Firebase</span>
+            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20">Expo</span>
+          </div>
+          <a href="#" class="inline-flex items-center text-accent-primary hover:text-accent-secondary transition-colors group/link font-semibold">
+            Ver en App Store
+            <svg class="w-5 h-5 ml-2 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center animate-slide-up" style="animation-delay: 0.3s;">
+      <p class="text-gray-400 font-light mb-6">
+        ¿Interesado en ver más trabajos?
+      </p>
+      <a href="https://github.com/Xharless" target="_blank" class="inline-flex items-center px-8 py-4 bg-accent-primary text-black rounded-xl font-semibold hover:bg-accent-primary/90 transition-all duration-300 transform hover:scale-105 shadow-xl shadow-accent-primary/30">
+        Visita mi GitHub
+        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
         </svg>
       </a>
     </div>
