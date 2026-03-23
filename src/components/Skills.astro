@@ -2,10 +2,6 @@
 ---
 
 <section id="habilidades" class="py-32 px-6 bg-black relative overflow-hidden">
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent-secondary/5 rounded-full blur-3xl animate-sway"></div>
-  </div>
-
   <div class="max-w-6xl mx-auto relative z-10">
     <!-- Header -->
     <div class="mb-20 text-center">
@@ -27,8 +23,7 @@
         {
           ['JavaScript', 'TypeScript', 'Python', 'HTML/CSS'].map((lang, i) => (
             <div 
-              class="group glass-premium rounded-lg p-6 border border-gray-800 hover:border-accent-primary/50 smooth-transition will-change-transform cursor-pointer animate-scale-in h-48"
-              style={{animationDelay: `${i * 0.1}s`}}
+              class="group glass-premium rounded-lg p-6 border border-gray-800 hover:border-accent-primary/50 smooth-transition will-change-transform cursor-pointer h-48"
             >
               <div class="flex items-center justify-between mb-4">
                 <div class="text-lg font-semibold text-white smooth-transition group-hover:text-accent-primary">{lang}</div>
@@ -56,8 +51,7 @@
         {
           ['React', 'Astro', 'Next.js', 'Vue.js'].map((framework, i) => (
             <div 
-              class="group glass-premium rounded-lg p-6 border border-gray-800 hover:border-accent-secondary/50 smooth-transition will-change-transform cursor-pointer animate-scale-in h-48"
-              style={{animationDelay: `${i * 0.1}s`}}
+              class="group glass-premium rounded-lg p-6 border border-gray-800 hover:border-accent-secondary/50 smooth-transition will-change-transform cursor-pointer h-48"
             >
               <div class="flex items-center justify-between mb-4">
                 <div class="text-lg font-semibold text-white smooth-transition group-hover:text-accent-secondary">{framework}</div>
@@ -85,8 +79,7 @@
         {
           ['Git & GitHub', 'VS Code', 'MongoDB', 'Docker'].map((tool, i) => (
             <div 
-              class="group glass-premium rounded-lg p-6 border border-gray-800 hover:border-accent-primary/50 smooth-transition will-change-transform cursor-pointer animate-scale-in h-28"
-              style={{animationDelay: `${i * 0.1}s`}}
+              class="group glass-premium rounded-lg p-6 border border-gray-800 hover:border-accent-primary/50 smooth-transition will-change-transform cursor-pointer h-28"
             >
               <div class="flex items-center justify-between">
                 <span class="text-lg font-semibold text-white smooth-transition group-hover:text-accent-primary">{tool}</span>
