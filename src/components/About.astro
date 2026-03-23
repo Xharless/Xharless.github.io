@@ -1,71 +1,92 @@
 ---
 ---
 
-<section id="sobre" class="py-24 bg-dark-900">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="mb-16 animate-slide-up">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4 text-dark-50">Sobre Mí</h2>
-      <div class="w-20 h-1 bg-accent-primary rounded-full"></div>
+<section id="sobre" class="py-32 bg-black/50 relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-accent-primary rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="mb-20 text-center animate-slide-up">
+      <h2 class="text-5xl md:text-6xl font-bold mb-6 text-white">Sobre Mí</h2>
+      <p class="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">Desarrollador Full Stack apasionado por crear experiencias digitales elegantes y funcionales</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
       <!-- Descripción -->
-      <div class="md:col-span-2 animate-slide-up" style="animation-delay: 0.1s;">
-        <p class="text-dark-300 text-lg leading-relaxed mb-6">
-          Soy un desarrollador apasionado por crear experiencias digitales hermosas y funcionales. Con experiencia en tecnologías web modernas, me especializo en construir aplicaciones que combinan diseño elegante con funcionalidad robusta.
-        </p>
-        <p class="text-dark-400 text-lg leading-relaxed">
-          Mi enfoque es simple: comprender el problema, diseñar la solución y ejecutarla con precisión  dejando siempre código limpio y mantenible.
-        </p>
+      <div class="animate-slide-up space-y-6">
+        <div>
+          <p class="text-gray-300 text-lg leading-relaxed font-light">
+            Soy un desarrollador apasionado por crear soluciones digitales que combinan elegancia con funcionalidad. Mi especialidad es transformar ideas en productos reales usando tecnologías modernas.
+          </p>
+        </div>
+        <div>
+          <p class="text-gray-400 text-lg leading-relaxed font-light">
+            Mi filosofía es simple: comprender profundamente el problema, diseñar una solución elegante y ejecutarla con precisión, dejando siempre código limpio y mantenible.
+          </p>
+        </div>
+        <div class="pt-4">
+          <h3 class="text-white font-semibold mb-4">Especialidades</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 bg-white/5 border border-gray-700 text-gray-300 rounded-full text-sm font-medium hover:bg-accent-primary/10 hover:border-accent-primary/50 transition-all">Frontend</span>
+            <span class="px-4 py-2 bg-white/5 border border-gray-700 text-gray-300 rounded-full text-sm font-medium hover:bg-accent-primary/10 hover:border-accent-primary/50 transition-all">Backend</span>
+            <span class="px-4 py-2 bg-white/5 border border-gray-700 text-gray-300 rounded-full text-sm font-medium hover:bg-accent-primary/10 hover:border-accent-primary/50 transition-all">Diseño</span>
+            <span class="px-4 py-2 bg-white/5 border border-gray-700 text-gray-300 rounded-full text-sm font-medium hover:bg-accent-primary/10 hover:border-accent-primary/50 transition-all">DevOps</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Números/Stats -->
-      <div class="space-y-4 animate-scale-in" style="animation-delay: 0.2s;">
-        <div class="bg-dark-800 border border-dark-700 p-6 rounded-xl hover:border-accent-primary/30 transition-all duration-300">
-          <div class="text-3xl font-bold text-accent-primary mb-2">50+</div>
-          <div class="text-dark-400 text-sm">Proyectos</div>
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-3 gap-4 animate-scale-in" style="animation-delay: 0.1s;">
+        <div class="group glass rounded-2xl p-8 border border-dark-700 text-center hover:border-accent-primary/50 hover:shadow-2xl hover:shadow-accent-primary/10 transition-all duration-500">
+          <div class="text-4xl font-bold text-accent-primary mb-3">50+</div>
+          <div class="text-gray-400 text-sm font-medium">Proyectos</div>
         </div>
-        <div class="bg-dark-800 border border-dark-700 p-6 rounded-xl hover:border-accent-primary/30 transition-all duration-300">
-          <div class="text-3xl font-bold text-accent-secondary mb-2">30+</div>
-          <div class="text-dark-400 text-sm">Clientes</div>
+        <div class="group glass rounded-2xl p-8 border border-dark-700 text-center hover:border-accent-primary/50 hover:shadow-2xl hover:shadow-accent-primary/10 transition-all duration-500" style="animation-delay: 0.1s;">
+          <div class="text-4xl font-bold text-accent-secondary mb-3">30+</div>
+          <div class="text-gray-400 text-sm font-medium">Clientes</div>
         </div>
-        <div class="bg-dark-800 border border-dark-700 p-6 rounded-xl hover:border-accent-primary/30 transition-all duration-300">
-          <div class="text-3xl font-bold text-accent-primary mb-2">5+</div>
-          <div class="text-dark-400 text-sm">Años</div>
+        <div class="group glass rounded-2xl p-8 border border-dark-700 text-center hover:border-accent-primary/50 hover:shadow-2xl hover:shadow-accent-primary/10 transition-all duration-500" style="animation-delay: 0.2s;">
+          <div class="text-4xl font-bold text-accent-primary mb-3">5+</div>
+          <div class="text-gray-400 text-sm font-medium">Años</div>
         </div>
       </div>
     </div>
 
-    <!-- Info items -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-      <div class="group p-6 bg-dark-800 rounded-xl border border-dark-700 hover:border-accent-primary/50 transition-all duration-300 hover:bg-dark-800/50 cursor-pointer animate-slide-up" style="animation-delay: 0.3s;">
-        <div class="w-12 h-12 bg-accent-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent-primary/20 transition-colors duration-300">
-          <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-          </svg>
+    <!-- Service Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="group relative glass rounded-2xl p-8 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden cursor-pointer animate-slide-up" style="animation-delay: 0s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-accent-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent-primary/20 transition-colors">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Desarrollo</h3>
+          <p class="text-gray-400 text-sm">Full Stack con tecnologías modernas y arquitecturas escalables</p>
         </div>
-        <h3 class="text-lg font-semibold text-dark-50 mb-2">Desarrollo</h3>
-        <p class="text-dark-400 text-sm">Full Stack con tecnologías modernas</p>
       </div>
 
-      <div class="group p-6 bg-dark-800 rounded-xl border border-dark-700 hover:border-accent-primary/50 transition-all duration-300 hover:bg-dark-800/50 cursor-pointer animate-slide-up" style="animation-delay: 0.4s;">
-        <div class="w-12 h-12 bg-accent-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent-primary/20 transition-colors duration-300">
-          <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-          </svg>
+      <div class="group relative glass rounded-2xl p-8 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden cursor-pointer animate-slide-up" style="animation-delay: 0.1s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-accent-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent-primary/20 transition-colors">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Diseño</h3>
+          <p class="text-gray-400 text-sm">UI/UX enfocado en experiencia y diseño moderno</p>
         </div>
-        <h3 class="text-lg font-semibold text-dark-50 mb-2">Diseño</h3>
-        <p class="text-dark-400 text-sm">UI/UX enfocado en experiencia</p>
       </div>
 
-      <div class="group p-6 bg-dark-800 rounded-xl border border-dark-700 hover:border-accent-primary/50 transition-all duration-300 hover:bg-dark-800/50 cursor-pointer animate-slide-up" style="animation-delay: 0.5s;">
-        <div class="w-12 h-12 bg-accent-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent-primary/20 transition-colors duration-300">
-          <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
+      <div class="group relative glass rounded-2xl p-8 border border-dark-700 hover:border-accent-primary/50 transition-all duration-500 overflow-hidden cursor-pointer animate-slide-up" style="animation-delay: 0.2s;">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-accent-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent-primary/20 transition-colors">
+            <svg class="w-6 h-6 text-accent-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2">Innovación</h3>
+          <p class="text-gray-400 text-sm">Soluciones creativas y tecnología de punta</p>
         </div>
-        <h3 class="text-lg font-semibold text-dark-50 mb-2">Innovación</h3>
-        <p class="text-dark-400 text-sm">Soluciones creativas</p>
       </div>
     </div>
   </div>
