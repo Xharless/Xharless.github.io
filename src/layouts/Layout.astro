@@ -16,9 +16,6 @@ const { title } = Astro.props;
     <meta name="description" content="Portafolio profesional de Carlos - Desarrollador Full Stack" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-    <!-- Preload fonts para mejor rendimiento -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   </head>
   <body class="bg-black text-white overflow-x-hidden">
     <Header />
@@ -29,29 +26,16 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-  /* CSS Variables para Liquid Design */
   :root {
-    /* Colores */
     --color-primary: #0a84ff;
     --color-secondary: #ff2d55;
-    --color-bg-dark: #000000;
-    --color-bg-gradient: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #050510 100%);
-    --color-glass: rgba(255, 255, 255, 0.06);
-    --color-glass-border: rgba(255, 255, 255, 0.12);
-    
-    /* Animaciones */
-    --timing-fast: 0.3s;
-    --timing-normal: 0.5s;
-    --timing-slow: 0.7s;
-    --easing-liquid: cubic-bezier(0.34, 1.56, 0.64, 1);
-    --easing-apple: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    
-    /* Performance hints */
-    --webkit-font-smoothing: antialiased;
-    --webkit-text-size-adjust: 100%;
+    --color-tertiary: #34c759;
+    --timing-fast: 0.2s;
+    --timing-normal: 0.3s;
+    --timing-slow: 0.5s;
+    --easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Optimización universal */
   * {
     margin: 0;
     padding: 0;
@@ -63,21 +47,18 @@ const { title } = Astro.props;
     scroll-padding-top: 80px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-size-adjust: 100%;
   }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
-    background: var(--color-bg-gradient);
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #050510 100%);
     min-height: 100vh;
     color: #ffffff;
     position: relative;
     overflow-x: hidden;
-    will-change: auto;
   }
 
-  /* Scrollbar Premium */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -91,7 +72,7 @@ const { title } = Astro.props;
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, rgba(10, 132, 255, 0.4) 0%, rgba(255, 45, 85, 0.3) 100%);
     border-radius: 10px;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -99,87 +80,37 @@ const { title } = Astro.props;
     box-shadow: 0 0 10px rgba(10, 132, 255, 0.3);
   }
 
-  /* Firefox Scrollbar */
-  * {
-    scrollbar-color: rgba(10, 132, 255, 0.4) rgba(255, 255, 255, 0.03);
-    scrollbar-width: thin;
-  }
-
-  /* Desabilitar tap highlight en iOS */
-  * {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-  }
-
-  /* Input styling */
-  input,
-  textarea,
-  select {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  /* Smooth transitions por defecto */
-  a,
-  button {
-    transition: all var(--timing-fast) var(--easing-apple);
-  }
-
-  /* Performance: Lazy loading images */
-  img[loading='lazy'] {
-    background: transparent;
-  }
-
-  /* Reduce motion for accessibility */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
-  /* Dark mode is default, pero asegurar que funcione bien */
-  @media (prefers-color-scheme: dark) {
-    body {
-      background: var(--color-bg-gradient);
-      color: #ffffff;
-    }
-  }
-
-  /* GPU acceleration para transiciones */
-  .glass,
-  .glass-premium {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-    will-change: auto;
-  }
-
-  /* Focus visible para accesibilidad */
-  *:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-  }
-
-  /* Link styling */
   a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
   }
 
-  /* Selection styling */
-  ::selection {
-    background-color: rgba(10, 132, 255, 0.25);
-    color: #ffffff;
+  input, textarea {
+    font-family: inherit;
   }
 
-  ::-moz-selection {
-    background-color: rgba(10, 132, 255, 0.25);
-    color: #ffffff;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section {
+    animation: fadeIn 0.6s ease forwards;
+  }
+
+  a, button {
+    transition: all var(--timing-fast) var(--easing-smooth);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    transition: none;
   }
 </style>
 

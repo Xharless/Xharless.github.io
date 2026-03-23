@@ -5,36 +5,34 @@
   <div class="max-w-6xl mx-auto relative z-10">
     <!-- Header -->
     <div class="mb-20 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 smooth-transition">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
         Habilidades & Herramientas
       </h2>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto font-light smooth-transition hover:text-gray-300">
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto font-light hover:text-gray-300 transition-colors duration-300">
         Tecnologías y herramientas que domino para crear soluciones web modernas
       </p>
     </div>
 
     <!-- Languages Grid -->
     <div class="mb-24">
-      <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3 smooth-transition">
+      <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
         <span class="w-1 h-8 bg-accent-primary rounded-full"></span>
         Lenguajes de Programación
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         {
           ['JavaScript', 'TypeScript', 'Python', 'HTML/CSS'].map((lang, i) => (
-            <div 
-              class="group glass-premium rounded-lg p-6 border border-gray-800 hover:border-accent-primary/50 smooth-transition will-change-transform cursor-pointer h-48"
-            >
+            <div class="group bg-white/5 rounded-lg p-6 border border-gray-800 hover:border-accent-primary/50 transition-all duration-300">
               <div class="flex items-center justify-between mb-4">
-                <div class="text-lg font-semibold text-white smooth-transition group-hover:text-accent-primary">{lang}</div>
-                <div class="w-8 h-8 rounded-full bg-accent-primary/10 group-hover:bg-accent-primary/20 flex items-center justify-center smooth-fast">
+                <div class="text-lg font-semibold text-white group-hover:text-accent-primary transition-colors duration-300">{lang}</div>
+                <div class="w-8 h-8 rounded-full bg-accent-primary/10 group-hover:bg-accent-primary/20 flex items-center justify-center transition-all duration-300">
                   <span class="text-accent-primary text-sm">→</span>
                 </div>
               </div>
               <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                <div class="bg-gradient-to-r from-accent-primary to-accent-secondary h-full smooth-transition" style={`width: ${90 + Math.random() * 10}%`}></div>
+                <div class="bg-gradient-to-r from-accent-primary to-accent-secondary h-full transition-all duration-500" style={`width: ${90 + Math.random() * 10}%`}></div>
               </div>
-              <p class="text-xs text-gray-500 mt-3 smooth-transition group-hover:text-gray-400">Dominio avanzado</p>
+              <p class="text-xs text-gray-500 mt-3 group-hover:text-gray-400 transition-colors duration-300">Dominio avanzado</p>
             </div>
           ))
         }
@@ -43,26 +41,24 @@
 
     <!-- Frameworks -->
     <div class="mb-24">
-      <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3 smooth-transition">
+      <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
         <span class="w-1 h-8 bg-accent-primary rounded-full"></span>
         Frameworks & Librerías
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         {
           ['React', 'Astro', 'Next.js', 'Vue.js'].map((framework, i) => (
-            <div 
-              class="group glass-premium rounded-lg p-6 border border-gray-800 hover:border-accent-secondary/50 smooth-transition will-change-transform cursor-pointer h-48"
-            >
+            <div class="group bg-white/5 rounded-lg p-6 border border-gray-800 hover:border-accent-secondary/50 transition-all duration-300">
               <div class="flex items-center justify-between mb-4">
-                <div class="text-lg font-semibold text-white smooth-transition group-hover:text-accent-secondary">{framework}</div>
-                <div class="w-8 h-8 rounded-full bg-accent-secondary/10 group-hover:bg-accent-secondary/20 flex items-center justify-center smooth-fast">
+                <div class="text-lg font-semibold text-white group-hover:text-accent-secondary transition-colors duration-300">{framework}</div>
+                <div class="w-8 h-8 rounded-full bg-accent-secondary/10 group-hover:bg-accent-secondary/20 flex items-center justify-center transition-all duration-300">
                   <span class="text-accent-secondary text-sm">→</span>
                 </div>
               </div>
               <div class="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                <div class="bg-gradient-to-r from-accent-secondary to-accent-primary h-full smooth-transition" style={`width: ${85 + Math.random() * 15}%`}></div>
+                <div class="bg-gradient-to-r from-accent-secondary to-accent-primary h-full transition-all duration-500" style={`width: ${85 + Math.random() * 15}%`}></div>
               </div>
-              <p class="text-xs text-gray-500 mt-3 smooth-transition group-hover:text-gray-400">Experiencia sólida</p>
+              <p class="text-xs text-gray-500 mt-3 group-hover:text-gray-400 transition-colors duration-300">Experiencia sólida</p>
             </div>
           ))
         }
@@ -71,21 +67,19 @@
 
     <!-- Tools & Platforms -->
     <div>
-      <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3 smooth-transition">
+      <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
         <span class="w-1 h-8 bg-accent-primary rounded-full"></span>
         Herramientas & Plataformas
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         {
           ['Git & GitHub', 'VS Code', 'MongoDB', 'Docker'].map((tool, i) => (
-            <div 
-              class="group glass-premium rounded-lg p-6 border border-gray-800 hover:border-accent-primary/50 smooth-transition will-change-transform cursor-pointer h-28"
-            >
+            <div class="group bg-white/5 rounded-lg p-6 border border-gray-800 hover:border-accent-primary/50 transition-all duration-300">
               <div class="flex items-center justify-between">
-                <span class="text-lg font-semibold text-white smooth-transition group-hover:text-accent-primary">{tool}</span>
-                <span class="text-2xl group-hover:scale-110 smooth-fast inline-block">✓</span>
+                <span class="text-lg font-semibold text-white group-hover:text-accent-primary transition-colors duration-300">{tool}</span>
+                <span class="text-2xl group-hover:scale-110 transition-transform duration-300 inline-block">✓</span>
               </div>
-              <p class="text-xs text-gray-500 mt-3 smooth-transition group-hover:text-gray-400">Herramienta clave</p>
+              <p class="text-xs text-gray-500 mt-3 group-hover:text-gray-400 transition-colors duration-300">Herramienta clave</p>
             </div>
           ))
         }
