@@ -3,7 +3,6 @@
 
 <!-- Cursor elements -->
 <div id="cursor-dot" class="cursor-dot"></div>
-<div id="cursor-ring" class="cursor-ring"></div>
 
 <style>
   /* Hide on touch devices */
@@ -88,7 +87,6 @@
 
 <script>
   const dot = document.getElementById("cursor-dot")!;
-  const ring = document.getElementById("cursor-ring")!;
 
   // Only run on non-touch devices
   if (window.matchMedia("(hover: hover)").matches) {
@@ -111,9 +109,6 @@
       ringX += (mouseX - ringX) * ease;
       ringY += (mouseY - ringY) * ease;
 
-      ring.style.left = ringX + "px";
-      ring.style.top = ringY + "px";
-
       rafId = requestAnimationFrame(animateRing);
     }
     animateRing();
@@ -124,7 +119,6 @@
     document.addEventListener("mouseover", (e) => {
       const target = (e.target as Element).closest(interactiveSelectors);
       if (target) {
-        ring.classList.add("hovering");
         dot.classList.add("hovering");
       }
     });
@@ -132,7 +126,6 @@
     document.addEventListener("mouseout", (e) => {
       const target = (e.target as Element).closest(interactiveSelectors);
       if (target) {
-        ring.classList.remove("hovering");
         dot.classList.remove("hovering");
       }
     });
@@ -140,38 +133,28 @@
     // Text input cursor state
     document.addEventListener("mouseover", (e) => {
       const target = e.target as Element;
-      if (target.matches("input, textarea")) {
-        ring.classList.add("text-mode");
-        ring.classList.remove("hovering");
-      }
     });
 
     document.addEventListener("mouseout", (e) => {
       const target = e.target as Element;
-      if (target.matches("input, textarea")) {
-        ring.classList.remove("text-mode");
-      }
+      
     });
 
     // Click effect
     document.addEventListener("mousedown", () => {
-      ring.classList.add("clicking");
       dot.style.transform = "translate(-50%, -50%) scale(0.6)";
     });
 
     document.addEventListener("mouseup", () => {
-      ring.classList.remove("clicking");
       dot.style.transform = "translate(-50%, -50%) scale(1)";
     });
 
     // Hide when leaving window
     document.addEventListener("mouseleave", () => {
-      ring.classList.add("hidden");
       dot.classList.add("hidden");
     });
 
     document.addEventListener("mouseenter", () => {
-      ring.classList.remove("hidden");
       dot.classList.remove("hidden");
     });
   }

@@ -36,9 +36,17 @@ const skills = [
 ];
 
 const techStack = [
-  "TypeScript", "React", "Next.js", "Astro", "Node.js",
-  "Python", "PostgreSQL", "Docker", "Git", "Tailwind",
-  "Figma", "Vercel", "AWS", "GraphQL", "Prisma",
+  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+  { name: "Astro", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" }
 ];
 ---
 
@@ -89,7 +97,10 @@ const techStack = [
       <div class="tech-cloud-label">También trabajo con</div>
       <div class="tech-pills">
         {techStack.map((tech) => (
-          <span class="tech-pill">{tech}</span>
+          <span class="tech-pill">
+            {tech.icon && <img src={tech.icon} alt={tech.name} class="tech-icon" loading="lazy" />}
+            {tech.name}
+          </span>
         ))}
       </div>
     </div>
@@ -259,27 +270,56 @@ const techStack = [
   .tech-pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 12px;
   }
 
   .tech-pill {
     display: inline-flex;
-    padding: 6px 14px;
-    background: var(--surface-hover);
-    border: 1px solid var(--border);
+    align-items: center;
+    gap: 8px; /* Espacio entre el logo y el texto */
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 100px;
     font-size: 0.8125rem;
     font-weight: 500;
     color: var(--text-secondary);
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: default;
+    animation: float 4s ease-in-out infinite;
+  }
+  .tech-pill:nth-child(odd) {
+    animation-duration: 5s;
+    animation-delay: 0.5s;
+  }
+  .tech-pill:nth-child(even) {
+    animation-duration: 4.5s;
+    animation-delay: 0.2s;
   }
 
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  .tech-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s ease;
+  }
   .tech-pill:hover {
     color: var(--text-primary);
-    border-color: var(--border-hover);
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-1px);
+    border-color: var(--accent);
+    background: rgba(10, 132, 255, 0.08);
+    transform: translateY(-4px) scale(1.05); 
+    box-shadow: 0 8px 24px rgba(10, 132, 255, 0.2);
+    animation-play-state: paused; 
+    z-index: 10;
+  }
+
+  .tech-pill:hover .tech-icon {
+    filter: grayscale(0%) opacity(1);
   }
 </style>
 
