@@ -1,116 +1,145 @@
 ---
-import Header from '../components/Header.astro';
-
-interface Props {
-  title: string;
+export interface Props {
+  title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title = "Carlos — Developer",
+  description = "Portafolio profesional de Carlos, desarrollador de software.",
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portafolio profesional de Carlos - Desarrollador Full Stack" />
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+
+    <!-- Google Fonts: SF-inspired stack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-black text-white overflow-x-hidden">
-    <Header />
-    <main class="pt-20">
-      <slot />
-    </main>
+  <body>
+    <slot />
   </body>
 </html>
 
 <style is:global>
   :root {
-    --color-primary: #0a84ff;
-    --color-secondary: #ff2d55;
-    --color-tertiary: #34c759;
-    --timing-fast: 0.2s;
-    --timing-normal: 0.3s;
-    --timing-slow: 0.5s;
-    --easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --bg: #000000;
+    --bg-2: #0a0a0a;
+    --surface: rgba(255, 255, 255, 0.04);
+    --surface-hover: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.18);
+    --text-primary: #f5f5f7;
+    --text-secondary: rgba(245, 245, 247, 0.6);
+    --text-tertiary: rgba(245, 245, 247, 0.35);
+    --accent: #0a84ff;
+    --accent-glow: rgba(10, 132, 255, 0.3);
+    --accent-2: #bf5af2;
+    --accent-3: #30d158;
+    --font-display: "Syne", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  * {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: 400;
     line-height: 1.6;
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #050510 100%);
-    min-height: 100vh;
-    color: #ffffff;
-    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
+  /* Scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 6px;
   }
-
   ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
+    background: var(--bg);
   }
-
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, rgba(10, 132, 255, 0.4) 0%, rgba(255, 45, 85, 0.3) 100%);
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
   }
-
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, rgba(10, 132, 255, 0.6) 0%, rgba(255, 45, 85, 0.5) 100%);
-    box-shadow: 0 0 10px rgba(10, 132, 255, 0.3);
+    background: rgba(255, 255, 255, 0.22);
   }
 
-  a {
-    text-decoration: none;
-    color: inherit;
+  /* Selection */
+  ::selection {
+    background: var(--accent-glow);
+    color: var(--text-primary);
   }
 
-  input, textarea {
-    font-family: inherit;
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.8s var(--ease-out-expo),
+      transform 0.8s var(--ease-out-expo);
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  section {
-    animation: fadeIn 0.6s ease forwards;
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* Glass card */
+  .glass-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition:
+      border-color 0.3s var(--ease-in-out),
+      background 0.3s var(--ease-in-out),
+      transform 0.3s var(--ease-out-expo),
+      box-shadow 0.3s var(--ease-in-out);
   }
 
-  a, button {
-    transition: all var(--timing-fast) var(--easing-smooth);
+  .glass-card:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-    transition: none;
+  /* Glow */
+  .glow-accent {
+    box-shadow: 0 0 40px var(--accent-glow);
   }
 </style>
-

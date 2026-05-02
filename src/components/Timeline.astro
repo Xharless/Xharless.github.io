@@ -1,0 +1,389 @@
+---
+const timeline = [
+  {
+    year: "2025",
+    role: "Desarrollador Full-Stack Senior",
+    company: "Freelance & Consultoría",
+    description:
+      "Diseño y desarrollo de aplicaciones web completas para clientes de distintas industrias. Especialización en arquitectura frontend moderna y optimización de rendimiento.",
+    tags: ["Next.js", "TypeScript", "AWS", "Prisma"],
+    type: "work",
+    current: true,
+  },
+  {
+    year: "2024",
+    role: "Desarrollador Frontend",
+    company: "Startup SaaS — Remoto",
+    description:
+      "Construcción del dashboard principal de la plataforma desde cero. Implementación de sistema de diseño, autenticación y visualizaciones de datos en tiempo real.",
+    tags: ["React", "Tailwind", "GraphQL", "Figma"],
+    type: "work",
+    current: false,
+  },
+  {
+    year: "2023",
+    role: "Certificación Cloud & DevOps",
+    company: "AWS + Docker",
+    description:
+      "Formación intensiva en infraestructura cloud, contenedores y pipelines de CI/CD. Aplicación directa en proyectos de producción.",
+    tags: ["AWS", "Docker", "GitHub Actions", "Terraform"],
+    type: "education",
+    current: false,
+  },
+  {
+    year: "2022",
+    role: "Desarrollador Web Junior",
+    company: "Agencia Digital",
+    description:
+      "Primer rol profesional. Desarrollo de sitios y e-commerce para clientes locales. Aprendizaje acelerado de buenas prácticas, Git y trabajo en equipo.",
+    tags: ["React", "Node.js", "MySQL", "WordPress"],
+    type: "work",
+    current: false,
+  },
+  {
+    year: "2021",
+    role: "Ingeniería en Informática",
+    company: "Universidad — Chile",
+    description:
+      "Formación en ciencias de la computación, algoritmos, bases de datos y desarrollo de software. Proyectos de título enfocados en aplicaciones web.",
+    tags: ["Algoritmos", "POO", "SQL", "Linux"],
+    type: "education",
+    current: false,
+  },
+];
+---
+
+<section id="experiencia" class="timeline-section section">
+  <div class="container">
+    <div class="section-label reveal">Experiencia</div>
+    <h2 class="section-title reveal reveal-delay-1">Mi trayectoria</h2>
+    <p class="section-subtitle reveal reveal-delay-2">
+      El camino que me trajo hasta aquí.
+    </p>
+
+    <div class="timeline">
+      <!-- Vertical line -->
+      <div class="timeline-line">
+        <div class="timeline-line-fill" id="timelineFill"></div>
+      </div>
+
+      {timeline.map((item, i) => (
+        <div class={`timeline-item reveal reveal-delay-${Math.min(i + 1, 5)} ${item.current ? "current" : ""}`}>
+          <!-- Node -->
+          <div class="timeline-node">
+            <div class={`node-dot ${item.type} ${item.current ? "current" : ""}`}>
+              {item.type === "work"
+                ? <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-10-2h4v2h-4V5z"/></svg>
+                : <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+              }
+            </div>
+            <div class="node-year">{item.year}</div>
+          </div>
+
+          <!-- Card -->
+          <div class="timeline-card glass-card">
+            <div class="card-top">
+              <div class="card-meta">
+                <div class="card-role">{item.role}</div>
+                <div class="card-company">{item.company}</div>
+              </div>
+              {item.current && (
+                <span class="current-badge">
+                  <span class="current-dot"></span>
+                  Actual
+                </span>
+              )}
+              <span class={`type-badge ${item.type}`}>
+                {item.type === "work" ? "Trabajo" : "Formación"}
+              </span>
+            </div>
+
+            <p class="card-desc">{item.description}</p>
+
+            <div class="card-tags">
+              {item.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-section {
+    padding: 120px 24px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+    margin-bottom: 72px;
+    font-weight: 300;
+  }
+
+  /* Timeline layout */
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 119px;
+    top: 20px;
+    bottom: 20px;
+    width: 1px;
+    background: var(--border);
+    overflow: hidden;
+  }
+
+  .timeline-line-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+    transition: height 0.1s linear;
+    box-shadow: 0 0 12px rgba(10, 132, 255, 0.4);
+  }
+
+  @media (max-width: 640px) {
+    .timeline-line { left: 15px; }
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 32px;
+    align-items: start;
+    padding: 20px 0;
+  }
+
+  @media (max-width: 640px) {
+    .timeline-item { grid-template-columns: 40px 1fr; gap: 20px; }
+  }
+
+  /* Node */
+  .timeline-node {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    padding-top: 18px;
+    position: relative;
+  }
+
+  @media (max-width: 640px) {
+    .timeline-node { align-items: center; }
+  }
+
+  .node-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid var(--border);
+    background: var(--bg);
+    color: var(--text-tertiary);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .node-dot.work {
+    border-color: rgba(10, 132, 255, 0.3);
+    color: var(--accent);
+  }
+
+  .node-dot.education {
+    border-color: rgba(191, 90, 242, 0.3);
+    color: var(--accent-2);
+  }
+
+  .node-dot.current {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(10, 132, 255, 0.12);
+    animation: nodePulse 2s ease-in-out infinite;
+  }
+
+  @keyframes nodePulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(10, 132, 255, 0.12); }
+    50% { box-shadow: 0 0 0 8px rgba(10, 132, 255, 0.06); }
+  }
+
+  .node-year {
+    font-family: var(--font-display);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 640px) {
+    .node-year { display: none; }
+  }
+
+  /* Card */
+  .timeline-card {
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .card-meta { flex: 1; }
+
+  .card-role {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    margin-bottom: 3px;
+  }
+
+  .card-company {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .current-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: rgba(10, 132, 255, 0.1);
+    border: 1px solid rgba(10, 132, 255, 0.25);
+    border-radius: 100px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .current-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .type-badge {
+    display: inline-flex;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .type-badge.work {
+    color: rgba(10, 132, 255, 0.7);
+    background: rgba(10, 132, 255, 0.06);
+    border: 1px solid rgba(10, 132, 255, 0.15);
+  }
+
+  .type-badge.education {
+    color: rgba(191, 90, 242, 0.8);
+    background: rgba(191, 90, 242, 0.06);
+    border: 1px solid rgba(191, 90, 242, 0.15);
+  }
+
+  .card-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    display: inline-flex;
+    padding: 4px 10px;
+    background: var(--surface-hover);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+  }
+</style>
+
+<script>
+  // Animate timeline line on scroll
+  const section = document.querySelector(".timeline-section") as HTMLElement;
+  const fill = document.getElementById("timelineFill");
+
+  if (section && fill) {
+    function updateLine() {
+      const rect = section.getBoundingClientRect();
+      const windowH = window.innerHeight;
+      const sectionH = section.offsetHeight;
+
+      // How far we've scrolled into the section
+      const scrolled = Math.max(0, windowH - rect.top);
+      const progress = Math.min(scrolled / (sectionH + windowH * 0.5), 1);
+
+      fill!.style.height = (progress * 100) + "%";
+    }
+
+    window.addEventListener("scroll", updateLine, { passive: true });
+    updateLine();
+  }
+</script>

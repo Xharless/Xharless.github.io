@@ -1,18 +1,50 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Skills from '../components/Skills.astro';
-import Projects from '../components/Projects.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Loader from "../components/Loader.astro";
+import Cursor from "../components/Cursor.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Stats from "../components/Stats.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import Timeline from "../components/Timeline.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
 ---
 
-<Layout title="Carlos - Portafolio Profesional">
-  <Hero />
-  <About />
-  <Skills />
-  <Projects />
-  <Contact />
-  <Footer />
+<Layout
+  title="Carlos — Developer"
+  description="Portafolio profesional de Carlos, desarrollador full-stack especializado en experiencias web modernas."
+>
+  <Loader />
+  <Cursor />
+  <Navbar />
+  <main>
+    <Hero />
+    <Stats />
+    <About />
+    <Skills />
+    <Timeline />
+    <Projects />
+    <Contact />
+  </main>
 </Layout>
+
+<script>
+  // Global scroll reveal
+  const revealEls = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  revealEls.forEach((el) => observer.observe(el));
+</script>

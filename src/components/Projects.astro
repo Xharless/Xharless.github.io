@@ -1,97 +1,355 @@
 ---
+const projects = [
+  {
+    title: "Dashboard Analytics",
+    description: "Plataforma de análisis de datos en tiempo real con visualizaciones interactivas, filtros avanzados y exportación de reportes.",
+    tags: ["React", "TypeScript", "D3.js", "Node.js"],
+    color: "#0a84ff",
+    emoji: "📊",
+    github: "https://github.com",
+    demo: "https://demo.com",
+    featured: true,
+  },
+  {
+    title: "E-commerce Platform",
+    description: "Tienda online con carrito, pagos integrados con Stripe, panel de administración y optimización SEO avanzada.",
+    tags: ["Next.js", "Prisma", "PostgreSQL", "Stripe"],
+    color: "#bf5af2",
+    emoji: "🛍️",
+    github: "https://github.com",
+    demo: "https://demo.com",
+    featured: true,
+  },
+  {
+    title: "Task Management App",
+    description: "Aplicación de gestión de tareas con drag & drop, colaboración en tiempo real y notificaciones push.",
+    tags: ["React", "Socket.io", "Express", "MongoDB"],
+    color: "#30d158",
+    emoji: "✅",
+    github: "https://github.com",
+    demo: "https://demo.com",
+    featured: false,
+  },
+  {
+    title: "AI Chat Interface",
+    description: "Interfaz de chat para modelos de lenguaje con streaming de respuestas, historial de conversaciones y temas personalizables.",
+    tags: ["Astro", "OpenAI API", "Tailwind", "TypeScript"],
+    color: "#ff9f0a",
+    emoji: "🤖",
+    github: "https://github.com",
+    demo: "https://demo.com",
+    featured: false,
+  },
+  {
+    title: "Portfolio CMS",
+    description: "Sistema de gestión de contenido headless para portafolios, con editor visual y despliegue automático.",
+    tags: ["Astro", "Sanity", "Vercel", "TypeScript"],
+    color: "#ff453a",
+    emoji: "📝",
+    github: "https://github.com",
+    demo: "https://demo.com",
+    featured: false,
+  },
+  {
+    title: "Weather App",
+    description: "Aplicación meteorológica con pronóstico de 7 días, geolocalización y visualización animada de condiciones.",
+    tags: ["React", "OpenWeather API", "Framer Motion"],
+    color: "#64d2ff",
+    emoji: "🌤️",
+    github: "https://github.com",
+    demo: "https://demo.com",
+    featured: false,
+  },
+];
 ---
 
-<section id="proyectos" class="py-32 px-6 bg-black relative overflow-hidden">
-  <div class="max-w-6xl mx-auto relative z-10">
-    <!-- Header -->
-    <div class="mb-20 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-        Proyectos Destacados
+<section id="proyectos" class="projects section">
+  <div class="container">
+    <div class="section-label reveal">Proyectos</div>
+    <div class="projects-header">
+      <h2 class="section-title reveal reveal-delay-1">
+        Trabajo seleccionado
       </h2>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto font-light hover:text-gray-300 transition-colors duration-300">
-        Algunos de los proyectos más impactantes que he desarrollado con diferentes tecnologías
-      </p>
-    </div>
-
-    <!-- Projects Featured Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-      <!-- Project 1 - Featured Large -->
-      <div class="group lg:col-span-1 bg-white/5 rounded-xl overflow-hidden border border-gray-800 hover:border-accent-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent-primary/20">
-        <div class="h-56 bg-gradient-to-br from-accent-primary/30 to-accent-secondary/20 border-b border-gray-800 flex items-center justify-center overflow-hidden relative">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        </div>
-        <div class="p-8 relative z-10">
-          <div class="mb-4">
-            <h3 class="text-2xl font-bold text-white mb-2">Plataforma SaaS Enterprise</h3>
-            <p class="text-gray-400 font-light leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-              Plataforma completa de gestión de proyectos con autenticación avanzada, panel en tiempo real y API robusta para integraciones.
-            </p>
-          </div>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20 hover:bg-accent-primary/20 transition-all duration-300">React</span>
-            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20 hover:bg-accent-primary/20 transition-all duration-300">Node.js</span>
-            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20 hover:bg-accent-primary/20 transition-all duration-300">MongoDB</span>
-          </div>
-          <a href="#" class="inline-flex items-center text-accent-primary hover:text-accent-secondary transition-colors duration-300 font-semibold">
-            Ver proyecto en vivo →
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="group bg-white/5 rounded-xl overflow-hidden border border-gray-800 hover:border-accent-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent-primary/20">
-        <div class="h-56 bg-gradient-to-br from-accent-primary/30 to-accent-secondary/20 border-b border-gray-800 flex items-center justify-center overflow-hidden relative">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-        </div>
-        <div class="p-8 relative z-10">
-          <div class="mb-4">
-            <h3 class="text-2xl font-bold text-white mb-2">Portafolio Personal</h3>
-            <p class="text-gray-400 font-light leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-              Sitio responsivo con diseño moderno, animaciones fluidas y arquitectura optimizada para rendimiento máximo.
-            </p>
-          </div>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20 hover:bg-accent-primary/20 transition-all duration-300">Astro</span>
-            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20 hover:bg-accent-primary/20 transition-all duration-300">Tailwind</span>
-          </div>
-          <a href="#" class="inline-flex items-center text-accent-primary hover:text-accent-secondary transition-colors duration-300 font-semibold">
-            Ver código →
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 3 - Full Width -->
-    <div class="group bg-white/5 rounded-xl overflow-hidden border border-gray-800 hover:border-accent-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent-primary/20 mb-8">
-      <div class="lg:grid lg:grid-cols-3">
-        <div class="lg:col-span-1 h-56 lg:h-full bg-gradient-to-br from-accent-primary/30 to-accent-secondary/20 border-b lg:border-b-0 lg:border-r border-gray-800 flex items-center justify-center overflow-hidden relative">
-          <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/40 to-transparent"></div>
-        </div>
-        <div class="lg:col-span-2 p-8 relative z-10">
-          <h3 class="text-2xl font-bold text-white mb-2">Aplicación Móvil Cross-Platform</h3>
-          <p class="text-gray-400 font-light leading-relaxed mb-6 group-hover:text-gray-300 transition-colors duration-300">
-            Aplicación nativa funcionando en iOS y Android con sincronización en tiempo real en la nube, notificaciones push y experiencia offline completa.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20 hover:bg-accent-primary/20 transition-all duration-300">React Native</span>
-            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20 hover:bg-accent-primary/20 transition-all duration-300">Firebase</span>
-            <span class="px-4 py-2 bg-accent-primary/10 text-accent-primary text-sm font-semibold rounded-full border border-accent-primary/20 hover:bg-accent-primary/20 transition-all duration-300">Expo</span>
-          </div>
-          <a href="#" class="inline-flex items-center text-accent-primary hover:text-accent-secondary transition-colors duration-300 font-semibold">
-            Ver en App Store →
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="text-center">
-      <p class="text-gray-400 font-light mb-6 hover:text-gray-300 transition-colors duration-300">
-        ¿Interesado en ver más trabajos?
-      </p>
-      <a href="https://github.com/Xharless" target="_blank" class="inline-flex items-center px-8 py-4 bg-accent-primary text-black rounded-lg font-semibold hover:bg-accent-primary/90 transition-all duration-300 shadow-lg shadow-accent-primary/30">
-        Visita mi GitHub →
+      <a href="https://github.com" target="_blank" rel="noopener" class="view-all reveal reveal-delay-2">
+        Ver todos en GitHub
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M7 17L17 7M17 7H7M17 7v10"/>
+        </svg>
       </a>
+    </div>
+
+    <div class="projects-grid">
+      {projects.map((project, i) => (
+        <div
+          class={`project-card glass-card reveal reveal-delay-${Math.min(i + 1, 5)} ${project.featured ? "featured" : ""}`}
+          style={`--project-color: ${project.color};`}
+        >
+          <div class="project-header">
+            <div class="project-emoji">{project.emoji}</div>
+            {project.featured && <span class="featured-badge">Destacado</span>}
+          </div>
+
+          <h3 class="project-title">{project.title}</h3>
+          <p class="project-desc">{project.description}</p>
+
+          <div class="project-tags">
+            {project.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+
+          <div class="project-links">
+            <a href={project.github} target="_blank" rel="noopener" class="project-link">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              Código
+            </a>
+            <a href={project.demo} target="_blank" rel="noopener" class="project-link demo">
+              Demo
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Glow on hover -->
+          <div class="card-glow"></div>
+        </div>
+      ))}
     </div>
   </div>
 </section>
+
+<style>
+  .projects {
+    padding: 120px 24px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .projects-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: var(--text-primary);
+  }
+
+  .view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    padding-bottom: 6px;
+    transition: gap 0.2s ease;
+  }
+
+  .view-all:hover {
+    gap: 10px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+
+  .project-card {
+    border-radius: 20px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+
+  .project-card.featured {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 900px) {
+    .project-card.featured { grid-column: span 1; }
+  }
+
+  .project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .project-card:hover::after { opacity: 1; }
+
+  .card-glow {
+    position: absolute;
+    inset: -1px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    box-shadow: 0 0 40px var(--project-color, var(--accent));
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .project-card:hover .card-glow {
+    opacity: 0.12;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+  }
+
+  .project-emoji {
+    font-size: 1.75rem;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-hover);
+    border-radius: 14px;
+  }
+
+  .featured-badge {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--project-color);
+    background: color-mix(in srgb, var(--project-color) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--project-color) 30%, transparent);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  .project-title {
+    font-family: var(--font-display);
+    font-size: 1.1875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+  }
+
+  .project-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .tag {
+    display: inline-flex;
+    padding: 4px 10px;
+    background: var(--surface-hover);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    letter-spacing: 0.01em;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 100px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--surface-hover);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+
+  .project-link:hover {
+    color: var(--text-primary);
+    border-color: var(--border-hover);
+    transform: translateY(-1px);
+  }
+
+  .project-link.demo {
+    color: var(--project-color);
+    border-color: color-mix(in srgb, var(--project-color) 30%, transparent);
+    background: color-mix(in srgb, var(--project-color) 8%, transparent);
+  }
+
+  .project-link.demo:hover {
+    background: color-mix(in srgb, var(--project-color) 15%, transparent);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--project-color) 30%, transparent);
+  }
+</style>
+
+<script>
+  // Mouse glow effect on cards
+  document.querySelectorAll<HTMLElement>(".project-card").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty("--mx", `${x}%`);
+      card.style.setProperty("--my", `${y}%`);
+    });
+  });
+</script>
