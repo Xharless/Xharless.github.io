@@ -89,7 +89,7 @@
             </button>
           </form>
 
-          <div id="formSuccess" class="form-success" hidden>
+          <div id="formSuccess" class="form-success hidden" >
             <div class="success-icon">✅</div>
             <div class="success-title">¡Mensaje enviado!</div>
             <div class="success-sub">Te responderé a la brevedad.</div>
@@ -390,12 +390,17 @@
   @media (max-width: 580px) {
     .footer-copy { order: 3; margin-left: 0; width: 100%; }
   }
+
+  .hidden {
+    display: none !important;
+  }
 </style>
 
 <script>
   const form = document.getElementById("contactForm") as HTMLFormElement;
   const btn = document.getElementById("submitBtn") as HTMLButtonElement;
   const successEl = document.getElementById("formSuccess") as HTMLElement;
+  
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -416,8 +421,8 @@
       });
 
       if (response.ok) {
-        form.hidden = true;
-        successEl.hidden = false;
+        form.classList.add("hidden");      
+        successEl.classList.remove("hidden");
       } else {
         alert("Hubo un error al enviar el mensaje.");
       }
