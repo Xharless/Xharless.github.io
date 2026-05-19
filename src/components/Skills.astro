@@ -1,38 +1,33 @@
 ---
-const skills = [
+const categories = [
   {
-    category: "Frontend",
-    icon: "🎨",
-    color: "#0a84ff",
-    items: [
-      { name: "TypeScript", level: 90 },
-      { name: "React / Next.js", level: 88 },
-      { name: "Astro", level: 82 },
-      { name: "Tailwind CSS", level: 92 },
-    ],
+    title: "Frontend",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>`,
+    skills: ["TypeScript", "React", "Next.js", "Astro", "Tailwind CSS"],
+    glow: "from-cyan-500/10 to-blue-500/10",
+    borderHover: "hover:border-cyan-500/50"
   },
   {
-    category: "Backend",
-    icon: "⚙️",
-    color: "#bf5af2",
-    items: [
-      { name: "Node.js", level: 85 },
-      { name: "Python", level: 78 },
-      { name: "PostgreSQL", level: 80 },
-      { name: "REST / GraphQL", level: 84 },
-    ],
+    title: "Backend",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-fuchsia-400"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>`,
+    skills: ["Node.js", "Python", "PostgreSQL", "REST APIs", "GraphQL"],
+    glow: "from-fuchsia-500/10 to-purple-500/10",
+    borderHover: "hover:border-fuchsia-500/50"
   },
   {
-    category: "Herramientas",
-    icon: "🛠",
-    color: "#30d158",
-    items: [
-      { name: "Git / GitHub", level: 94 },
-      { name: "Docker", level: 72 },
-      { name: "Figma", level: 76 },
-      { name: "CI/CD", level: 70 },
-    ],
+    title: "DevOps",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>`,
+    skills: ["Git", "GitHub Actions", "Docker", "AWS", "Vercel"],
+    glow: "from-emerald-500/10 to-teal-500/10",
+    borderHover: "hover:border-emerald-500/50"
   },
+  {
+    title: "Design",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>`,
+    skills: ["UI/UX", "Figma", "Prototyping", "Design Systems"],
+    glow: "from-amber-500/10 to-orange-500/10",
+    borderHover: "hover:border-amber-500/50"
+  }
 ];
 
 const techStack = [
@@ -41,295 +36,66 @@ const techStack = [
   { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
   { name: "Astro", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" },
   { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
-  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
   { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
   { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
   { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
-  { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
   { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" }
 ];
 ---
 
-<section id="habilidades" class="skills section">
-  <div class="container">
-    <div class="section-label reveal">Habilidades</div>
-    <h2 class="section-title reveal reveal-delay-1">
-      Mi stack técnico
-    </h2>
-    <p class="section-subtitle reveal reveal-delay-2">
-      Herramientas y tecnologías con las que construyo día a día.
-    </p>
+<section id="habilidades" class="relative py-32 px-6 overflow-hidden">
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+    
+    <!-- Left: Sticky Title -->
+    <div class="lg:w-1/3 lg:sticky lg:top-32 h-fit reveal delay-100">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-6">
+        <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+        Ecosistema
+      </div>
+      <h2 class="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">
+        Mi <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Arsenal</span> Técnico.
+      </h2>
+      <p class="text-zinc-400 text-lg leading-relaxed mb-8 font-light">
+        Domino las tecnologías modernas necesarias para construir desde la interfaz de usuario más fluida hasta la arquitectura backend más robusta.
+      </p>
 
-    <div class="skills-grid">
-      {skills.map((group, gi) => (
-        <div
-          class={`skill-card glass-card reveal reveal-delay-${gi + 2}`}
-          style={`--card-accent: ${group.color};`}
-        >
-          <div class="skill-card-header">
-            <span class="skill-icon">{group.icon}</span>
-            <span class="skill-category">{group.category}</span>
+      <!-- Tech Cloud Minimal -->
+      <div class="flex flex-wrap gap-4">
+        {techStack.map((tech) => (
+          <div class="group relative flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:scale-110 transition-all duration-300 cursor-default">
+            {tech.icon && <img src={tech.icon} alt={tech.name} class="w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" loading="lazy" />}
+            <div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-white bg-zinc-800 px-2 py-1 rounded whitespace-nowrap z-20 shadow-xl">
+              {tech.name}
+            </div>
           </div>
+        ))}
+      </div>
+    </div>
 
-          <div class="skill-items">
-            {group.items.map((item) => (
-              <div class="skill-item">
-                <div class="skill-meta">
-                  <span class="skill-name">{item.name}</span>
-                  <span class="skill-pct">{item.level}%</span>
-                </div>
-                <div class="skill-bar">
-                  <div
-                    class="skill-fill"
-                    data-level={item.level}
-                    style={`--target: ${item.level}%; --accent: ${group.color};`}
-                  ></div>
-                </div>
-              </div>
-            ))}
+    <!-- Right: Staggered Cards -->
+    <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
+      {categories.map((cat, i) => (
+        <div class={`group relative overflow-hidden rounded-2xl bg-[#0a0a0a]/80 backdrop-blur-md border border-white/10 p-8 transition-all duration-300 hover:-translate-y-2 reveal delay-${(i % 2 + 2) * 100} ${i % 2 !== 0 ? 'sm:mt-12' : ''} ${cat.borderHover}`}>
+          <!-- Hover Glow -->
+          <div class={`absolute inset-0 bg-gradient-to-br ${cat.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+          
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
+              <Fragment set:html={cat.icon} />
+            </div>
+            <h3 class="text-2xl font-display font-bold text-white mb-6">{cat.title}</h3>
+            <ul class="space-y-3">
+              {cat.skills.map((skill) => (
+                <li class="flex items-center text-zinc-400 group-hover:text-zinc-200 transition-colors">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-white/80 mr-3 transition-colors"></span>
+                  {skill}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       ))}
     </div>
-
-    <!-- Tech pill cloud -->
-    <div class="tech-cloud reveal reveal-delay-3">
-      <div class="tech-cloud-label">También trabajo con</div>
-      <div class="tech-pills">
-        {techStack.map((tech) => (
-          <span class="tech-pill">
-            {tech.icon && <img src={tech.icon} alt={tech.name} class="tech-icon" loading="lazy" />}
-            {tech.name}
-          </span>
-        ))}
-      </div>
-    </div>
+    
   </div>
 </section>
-
-<style>
-  .skills {
-    padding: 120px 24px;
-    background: linear-gradient(180deg, transparent 0%, rgba(10, 132, 255, 0.02) 50%, transparent 100%);
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-  }
-
-  .section-subtitle {
-    color: var(--text-secondary);
-    font-size: 1.0625rem;
-    margin-bottom: 64px;
-    font-weight: 300;
-    max-width: 500px;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 48px;
-  }
-
-  @media (max-width: 900px) { .skills-grid { grid-template-columns: 1fr; } }
-
-  .skill-card {
-    border-radius: 20px;
-    padding: 28px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .skill-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--card-accent), transparent);
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-  }
-
-  .skill-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--border-accent);
-  }
-
-  .skill-card:hover::before {
-    opacity: 1;
-  }
-
-  .skill-card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .skill-icon {
-    font-size: 1.5rem;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--surface-hover);
-    border-radius: 12px;
-  }
-
-  .skill-category {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
-  }
-
-  .skill-items {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .skill-item {}
-
-  .skill-meta {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-  }
-
-  .skill-name {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-  }
-
-  .skill-pct {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--text-tertiary);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .skill-bar {
-    height: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  .skill-fill {
-    height: 100%;
-    width: 0;
-    border-radius: 6px;
-    background: var(--accent);
-    transition: width 1.2s var(--ease-out-expo);
-    position: relative;
-  }
-
-  .skill-fill.animated {
-    width: var(--target);
-    background: linear-gradient(90deg, var(--accent), var(--accent-light));
-    box-shadow: 0 0 12px rgba(147, 51, 234, 0.3);
-  }
-
-  /* Glow effect for high proficiency */
-  .skill-fill.animated[style*="--target: 85%"],
-  .skill-fill.animated[style*="--target: 9"] {
-    box-shadow: 0 0 16px rgba(147, 51, 234, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.1);
-  }
-
-  /* Tech cloud */
-  .tech-cloud {
-    padding: 32px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-  }
-
-  .tech-cloud-label {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-tertiary);
-    margin-bottom: 16px;
-  }
-
-  .tech-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .tech-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 100px;
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
-  }
-
-  .tech-pill:hover {
-    color: var(--text-primary);
-    border-color: var(--accent);
-    background: var(--accent-bg);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(147, 51, 234, 0.15);
-  }
-</style>
-
-<script>
-  // Animate skill bars on intersection
-  const fills = document.querySelectorAll<HTMLElement>(".skill-fill");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const fill = entry.target as HTMLElement;
-          setTimeout(() => fill.classList.add("animated"), 200);
-          observer.unobserve(fill);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  fills.forEach((fill) => observer.observe(fill));
-</script>
