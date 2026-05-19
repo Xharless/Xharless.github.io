@@ -1,344 +1,131 @@
 ---
-const skills = [
-  {
-    category: "Frontend",
-    icon: "🎨",
-    color: "#0a84ff",
-    items: [
-      { name: "TypeScript", level: 90 },
-      { name: "React / Next.js", level: 88 },
-      { name: "Astro", level: 82 },
-      { name: "Tailwind CSS", level: 92 },
-    ],
-  },
-  {
-    category: "Backend",
-    icon: "⚙️",
-    color: "#bf5af2",
-    items: [
-      { name: "Node.js", level: 85 },
-      { name: "Python", level: 78 },
-      { name: "PostgreSQL", level: 80 },
-      { name: "REST / GraphQL", level: 84 },
-    ],
-  },
-  {
-    category: "Herramientas",
-    icon: "🛠",
-    color: "#30d158",
-    items: [
-      { name: "Git / GitHub", level: 94 },
-      { name: "Docker", level: 72 },
-      { name: "Figma", level: 76 },
-      { name: "CI/CD", level: 70 },
-    ],
-  },
-];
-
 const techStack = [
   { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
   { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
   { name: "Astro", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg" },
   { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
-  { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
   { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
   { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
   { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
-  { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
   { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" }
 ];
 ---
 
-<section id="habilidades" class="skills section">
-  <div class="container">
-    <div class="section-label reveal">Habilidades</div>
-    <h2 class="section-title reveal reveal-delay-1">
-      Mi stack técnico
-    </h2>
-    <p class="section-subtitle reveal reveal-delay-2">
-      Herramientas y tecnologías con las que construyo día a día.
-    </p>
+<section id="habilidades" class="relative py-32 px-6 overflow-hidden">
+  <div class="max-w-6xl mx-auto">
+    
+    <!-- Header -->
+    <div class="text-center mb-16 reveal delay-100">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-6">
+        <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+        Ecosistema
+      </div>
+      <h2 class="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">
+        Mi <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">Arsenal</span> Técnico.
+      </h2>
+    </div>
 
-    <div class="skills-grid">
-      {skills.map((group, gi) => (
-        <div
-          class={`skill-card glass-card reveal reveal-delay-${gi + 2}`}
-          style={`--card-accent: ${group.color};`}
-        >
-          <div class="skill-card-header">
-            <span class="skill-icon">{group.icon}</span>
-            <span class="skill-category">{group.category}</span>
+    <!-- BENTO GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[240px]">
+      
+      <!-- Frontend (Large Card) -->
+      <div class="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 group relative overflow-hidden rounded-3xl bg-[#0a0a0a]/80 border border-white/10 hover:border-cyan-500/50 transition-all duration-500 reveal delay-100 flex flex-col justify-end p-8">
+        <!-- Abstract CSS Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent"></div>
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-cyan-500/20 rounded-full blur-[80px] group-hover:bg-cyan-400/30 transition-all duration-700 group-hover:scale-150"></div>
+        <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500/20 rounded-full blur-[80px] group-hover:bg-blue-400/30 transition-all duration-700"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 mt-auto">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(34,211,238,0.2)] group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>
           </div>
+          <h3 class="text-3xl font-display font-bold text-white mb-2">Frontend Engineering</h3>
+          <p class="text-zinc-400 text-sm mb-6 leading-relaxed max-w-sm">Arquitectura de interfaces de usuario modernas, interactivas y altamente optimizadas.</p>
+          
+          <div class="flex flex-wrap gap-2">
+            {["React", "Next.js", "Astro", "Tailwind CSS", "TypeScript"].map(skill => (
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-zinc-300 backdrop-blur-md">{skill}</span>
+            ))}
+          </div>
+        </div>
 
-          <div class="skill-items">
-            {group.items.map((item) => (
-              <div class="skill-item">
-                <div class="skill-meta">
-                  <span class="skill-name">{item.name}</span>
-                  <span class="skill-pct">{item.level}%</span>
-                </div>
-                <div class="skill-bar">
-                  <div
-                    class="skill-fill"
-                    data-level={item.level}
-                    style={`--target: ${item.level}%; --accent: ${group.color};`}
-                  ></div>
-                </div>
+        <!-- Floating UI element -->
+        <div class="absolute top-8 right-8 w-32 h-24 border border-white/10 rounded-xl bg-white/5 backdrop-blur-md flex flex-col gap-2 p-3 transform rotate-6 group-hover:rotate-0 group-hover:-translate-y-2 transition-transform duration-500 shadow-2xl hidden sm:flex">
+          <div class="w-full h-3 bg-white/10 rounded-full"></div>
+          <div class="w-2/3 h-3 bg-cyan-500/40 rounded-full"></div>
+          <div class="w-4/5 h-3 bg-white/10 rounded-full mt-auto"></div>
+        </div>
+      </div>
+
+      <!-- Backend (Tall Card) -->
+      <div class="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 group relative overflow-hidden rounded-3xl bg-[#0a0a0a]/80 border border-white/10 hover:border-fuchsia-500/50 transition-all duration-500 reveal delay-200 flex flex-col p-8">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-fuchsia-500/20 rounded-full blur-[60px] group-hover:bg-fuchsia-400/40 transition-all duration-700"></div>
+
+        <div class="relative z-10 flex flex-col h-full">
+          <div class="w-12 h-12 rounded-2xl bg-fuchsia-500/20 border border-fuchsia-500/30 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(217,70,239,0.2)] group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-fuchsia-400"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white mb-2">Backend & APIs</h3>
+          <p class="text-zinc-400 text-sm mb-6">Lógica de servidor, bases de datos y arquitecturas escalables.</p>
+          
+          <div class="mt-auto flex flex-col gap-3">
+            {["Node.js", "Python", "PostgreSQL", "GraphQL"].map(skill => (
+              <div class="w-full flex items-center gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-fuchsia-400 animate-pulse"></div>
+                <span class="text-sm font-mono text-zinc-300">{skill}</span>
               </div>
             ))}
           </div>
         </div>
-      ))}
+      </div>
+
+      <!-- Tools & DevOps (Small Card) -->
+      <div class="col-span-1 md:col-span-1 lg:col-span-1 row-span-1 group relative overflow-hidden rounded-3xl bg-[#0a0a0a]/80 border border-white/10 hover:border-emerald-500/50 transition-all duration-500 reveal delay-300 p-6 flex flex-col justify-between">
+        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/5 to-transparent"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 border border-emerald-500/20 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 border border-emerald-500/20 rounded-full group-hover:scale-150 transition-transform duration-1000 delay-75"></div>
+
+        <div class="relative z-10 flex items-center justify-between w-full">
+           <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(52,211,153,0.2)] group-hover:rotate-12 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <span class="text-emerald-400 font-mono text-xs font-bold px-2 py-1 bg-emerald-500/10 rounded">CI/CD</span>
+        </div>
+        
+        <div class="relative z-10">
+          <h3 class="text-lg font-display font-bold text-white">DevOps</h3>
+          <p class="text-zinc-400 text-xs mt-1">Docker, AWS, Git</p>
+        </div>
+      </div>
+
+      <!-- Design (Small Card) -->
+      <div class="col-span-1 md:col-span-1 lg:col-span-1 row-span-1 group relative overflow-hidden rounded-3xl bg-[#0a0a0a]/80 border border-white/10 hover:border-amber-500/50 transition-all duration-500 reveal delay-400 p-6 flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500" style="background-image: radial-gradient(circle at 2px 2px, rgba(251, 191, 36, 0.4) 1px, transparent 0); background-size: 16px 16px;"></div>
+        
+        <div class="relative z-10 flex items-center justify-between w-full">
+           <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(251,191,36,0.2)] group-hover:-rotate-12 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <span class="text-amber-400 font-mono text-xs font-bold px-2 py-1 bg-amber-500/10 rounded">UI/UX</span>
+        </div>
+        
+        <div class="relative z-10">
+          <h3 class="text-lg font-display font-bold text-white">Diseño</h3>
+          <p class="text-zinc-400 text-xs mt-1">Figma, Prototyping</p>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Tech pill cloud -->
-    <div class="tech-cloud reveal reveal-delay-3">
-      <div class="tech-cloud-label">También trabajo con</div>
-      <div class="tech-pills">
-        {techStack.map((tech) => (
-          <span class="tech-pill">
-            {tech.icon && <img src={tech.icon} alt={tech.name} class="tech-icon" loading="lazy" />}
-            {tech.name}
-          </span>
-        ))}
-      </div>
+    <!-- Tech Stack Logos Marquee (below bento) -->
+    <div class="mt-4 p-4 rounded-3xl bg-white/5 border border-white/10 flex flex-wrap justify-center gap-6 md:gap-12 reveal delay-500 backdrop-blur-sm">
+       {techStack.map((tech) => (
+         <img src={tech.icon} alt={tech.name} title={tech.name} class="w-8 h-8 opacity-40 hover:opacity-100 hover:scale-125 transition-all duration-300 grayscale hover:grayscale-0 cursor-help" loading="lazy" />
+       ))}
     </div>
+
   </div>
 </section>
-
-<style>
-  .skills {
-    padding: 120px 24px;
-    background: linear-gradient(180deg, transparent 0%, rgba(10, 132, 255, 0.02) 50%, transparent 100%);
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-  }
-
-  .section-subtitle {
-    color: var(--text-secondary);
-    font-size: 1.0625rem;
-    margin-bottom: 64px;
-    font-weight: 300;
-    max-width: 500px;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 48px;
-  }
-
-  @media (max-width: 900px) { .skills-grid { grid-template-columns: 1fr; } }
-
-  .skill-card {
-    border-radius: 20px;
-    padding: 28px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skill-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--card-accent);
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-  }
-
-  .skill-card:hover::before {
-    opacity: 1;
-  }
-
-  .skill-card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .skill-icon {
-    font-size: 1.5rem;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--surface-hover);
-    border-radius: 12px;
-  }
-
-  .skill-category {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
-  }
-
-  .skill-items {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .skill-item {}
-
-  .skill-meta {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-  }
-
-  .skill-name {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-  }
-
-  .skill-pct {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--text-tertiary);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .skill-bar {
-    height: 4px;
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .skill-fill {
-    height: 100%;
-    width: 0;
-    border-radius: 4px;
-    background: var(--accent);
-    transition: width 1.2s var(--ease-out-expo);
-  }
-
-  .skill-fill.animated {
-    width: var(--target);
-    background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 70%, white));
-  }
-
-  /* Tech cloud */
-  .tech-cloud {
-    padding: 32px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-  }
-
-  .tech-cloud-label {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-tertiary);
-    margin-bottom: 16px;
-  }
-
-  .tech-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .tech-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px; /* Espacio entre el logo y el texto */
-    padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 100px;
-    font-size: 0.8125rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
-    animation: float 4s ease-in-out infinite;
-  }
-  .tech-pill:nth-child(odd) {
-    animation-duration: 5s;
-    animation-delay: 0.5s;
-  }
-  .tech-pill:nth-child(even) {
-    animation-duration: 4.5s;
-    animation-delay: 0.2s;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-  }
-  .tech-icon {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-    filter: grayscale(100%) opacity(0.6);
-    transition: all 0.3s ease;
-  }
-  .tech-pill:hover {
-    color: var(--text-primary);
-    border-color: var(--accent);
-    background: rgba(10, 132, 255, 0.08);
-    transform: translateY(-4px) scale(1.05); 
-    box-shadow: 0 8px 24px rgba(10, 132, 255, 0.2);
-    animation-play-state: paused; 
-    z-index: 10;
-  }
-
-  .tech-pill:hover .tech-icon {
-    filter: grayscale(0%) opacity(1);
-  }
-</style>
-
-<script>
-  // Animate skill bars on intersection
-  const fills = document.querySelectorAll<HTMLElement>(".skill-fill");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const fill = entry.target as HTMLElement;
-          setTimeout(() => fill.classList.add("animated"), 200);
-          observer.unobserve(fill);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  fills.forEach((fill) => observer.observe(fill));
-</script>
