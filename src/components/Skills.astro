@@ -1,35 +1,4 @@
 ---
-const categories = [
-  {
-    title: "Frontend",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>`,
-    skills: ["TypeScript", "React", "Next.js", "Astro", "Tailwind CSS"],
-    glow: "from-cyan-500/10 to-blue-500/10",
-    borderHover: "hover:border-cyan-500/50"
-  },
-  {
-    title: "Backend",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-fuchsia-400"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>`,
-    skills: ["Node.js", "Python", "PostgreSQL", "REST APIs", "GraphQL"],
-    glow: "from-fuchsia-500/10 to-purple-500/10",
-    borderHover: "hover:border-fuchsia-500/50"
-  },
-  {
-    title: "DevOps",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>`,
-    skills: ["Git", "GitHub Actions", "Docker", "AWS", "Vercel"],
-    glow: "from-emerald-500/10 to-teal-500/10",
-    borderHover: "hover:border-emerald-500/50"
-  },
-  {
-    title: "Design",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>`,
-    skills: ["UI/UX", "Figma", "Prototyping", "Design Systems"],
-    glow: "from-amber-500/10 to-orange-500/10",
-    borderHover: "hover:border-amber-500/50"
-  }
-];
-
 const techStack = [
   { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
@@ -44,58 +13,119 @@ const techStack = [
 ---
 
 <section id="habilidades" class="relative py-32 px-6 overflow-hidden">
-  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+  <div class="max-w-6xl mx-auto">
     
-    <!-- Left: Sticky Title -->
-    <div class="lg:w-1/3 lg:sticky lg:top-32 h-fit reveal delay-100">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal delay-100">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-6">
-        <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+        <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
         Ecosistema
       </div>
       <h2 class="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mb-6">
-        Mi <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Arsenal</span> Técnico.
+        Mi <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">Arsenal</span> Técnico.
       </h2>
-      <p class="text-zinc-400 text-lg leading-relaxed mb-8 font-light">
-        Domino las tecnologías modernas necesarias para construir desde la interfaz de usuario más fluida hasta la arquitectura backend más robusta.
-      </p>
-
-      <!-- Tech Cloud Minimal -->
-      <div class="flex flex-wrap gap-4">
-        {techStack.map((tech) => (
-          <div class="group relative flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:scale-110 transition-all duration-300 cursor-default">
-            {tech.icon && <img src={tech.icon} alt={tech.name} class="w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" loading="lazy" />}
-            <div class="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-white bg-zinc-800 px-2 py-1 rounded whitespace-nowrap z-20 shadow-xl">
-              {tech.name}
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
 
-    <!-- Right: Staggered Cards -->
-    <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
-      {categories.map((cat, i) => (
-        <div class={`group relative overflow-hidden rounded-2xl bg-[#0a0a0a]/80 backdrop-blur-md border border-white/10 p-8 transition-all duration-300 hover:-translate-y-2 reveal delay-${(i % 2 + 2) * 100} ${i % 2 !== 0 ? 'sm:mt-12' : ''} ${cat.borderHover}`}>
-          <!-- Hover Glow -->
-          <div class={`absolute inset-0 bg-gradient-to-br ${cat.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+    <!-- BENTO GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[240px]">
+      
+      <!-- Frontend (Large Card) -->
+      <div class="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 group relative overflow-hidden rounded-3xl bg-[#0a0a0a]/80 border border-white/10 hover:border-cyan-500/50 transition-all duration-500 reveal delay-100 flex flex-col justify-end p-8">
+        <!-- Abstract CSS Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent"></div>
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-cyan-500/20 rounded-full blur-[80px] group-hover:bg-cyan-400/30 transition-all duration-700 group-hover:scale-150"></div>
+        <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500/20 rounded-full blur-[80px] group-hover:bg-blue-400/30 transition-all duration-700"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 mt-auto">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(34,211,238,0.2)] group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>
+          </div>
+          <h3 class="text-3xl font-display font-bold text-white mb-2">Frontend Engineering</h3>
+          <p class="text-zinc-400 text-sm mb-6 leading-relaxed max-w-sm">Arquitectura de interfaces de usuario modernas, interactivas y altamente optimizadas.</p>
           
-          <div class="relative z-10">
-            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300">
-              <Fragment set:html={cat.icon} />
-            </div>
-            <h3 class="text-2xl font-display font-bold text-white mb-6">{cat.title}</h3>
-            <ul class="space-y-3">
-              {cat.skills.map((skill) => (
-                <li class="flex items-center text-zinc-400 group-hover:text-zinc-200 transition-colors">
-                  <span class="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-white/80 mr-3 transition-colors"></span>
-                  {skill}
-                </li>
-              ))}
-            </ul>
+          <div class="flex flex-wrap gap-2">
+            {["React", "Next.js", "Astro", "Tailwind CSS", "TypeScript"].map(skill => (
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-zinc-300 backdrop-blur-md">{skill}</span>
+            ))}
           </div>
         </div>
-      ))}
+
+        <!-- Floating UI element -->
+        <div class="absolute top-8 right-8 w-32 h-24 border border-white/10 rounded-xl bg-white/5 backdrop-blur-md flex flex-col gap-2 p-3 transform rotate-6 group-hover:rotate-0 group-hover:-translate-y-2 transition-transform duration-500 shadow-2xl hidden sm:flex">
+          <div class="w-full h-3 bg-white/10 rounded-full"></div>
+          <div class="w-2/3 h-3 bg-cyan-500/40 rounded-full"></div>
+          <div class="w-4/5 h-3 bg-white/10 rounded-full mt-auto"></div>
+        </div>
+      </div>
+
+      <!-- Backend (Tall Card) -->
+      <div class="col-span-1 md:col-span-1 lg:col-span-1 row-span-2 group relative overflow-hidden rounded-3xl bg-[#0a0a0a]/80 border border-white/10 hover:border-fuchsia-500/50 transition-all duration-500 reveal delay-200 flex flex-col p-8">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-fuchsia-500/20 rounded-full blur-[60px] group-hover:bg-fuchsia-400/40 transition-all duration-700"></div>
+
+        <div class="relative z-10 flex flex-col h-full">
+          <div class="w-12 h-12 rounded-2xl bg-fuchsia-500/20 border border-fuchsia-500/30 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(217,70,239,0.2)] group-hover:scale-110 transition-transform duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-fuchsia-400"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+          </div>
+          <h3 class="text-xl font-display font-bold text-white mb-2">Backend & APIs</h3>
+          <p class="text-zinc-400 text-sm mb-6">Lógica de servidor, bases de datos y arquitecturas escalables.</p>
+          
+          <div class="mt-auto flex flex-col gap-3">
+            {["Node.js", "Python", "PostgreSQL", "GraphQL"].map(skill => (
+              <div class="w-full flex items-center gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-fuchsia-400 animate-pulse"></div>
+                <span class="text-sm font-mono text-zinc-300">{skill}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & DevOps (Small Card) -->
+      <div class="col-span-1 md:col-span-1 lg:col-span-1 row-span-1 group relative overflow-hidden rounded-3xl bg-[#0a0a0a]/80 border border-white/10 hover:border-emerald-500/50 transition-all duration-500 reveal delay-300 p-6 flex flex-col justify-between">
+        <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/5 to-transparent"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 border border-emerald-500/20 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 border border-emerald-500/20 rounded-full group-hover:scale-150 transition-transform duration-1000 delay-75"></div>
+
+        <div class="relative z-10 flex items-center justify-between w-full">
+           <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(52,211,153,0.2)] group-hover:rotate-12 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <span class="text-emerald-400 font-mono text-xs font-bold px-2 py-1 bg-emerald-500/10 rounded">CI/CD</span>
+        </div>
+        
+        <div class="relative z-10">
+          <h3 class="text-lg font-display font-bold text-white">DevOps</h3>
+          <p class="text-zinc-400 text-xs mt-1">Docker, AWS, Git</p>
+        </div>
+      </div>
+
+      <!-- Design (Small Card) -->
+      <div class="col-span-1 md:col-span-1 lg:col-span-1 row-span-1 group relative overflow-hidden rounded-3xl bg-[#0a0a0a]/80 border border-white/10 hover:border-amber-500/50 transition-all duration-500 reveal delay-400 p-6 flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500" style="background-image: radial-gradient(circle at 2px 2px, rgba(251, 191, 36, 0.4) 1px, transparent 0); background-size: 16px 16px;"></div>
+        
+        <div class="relative z-10 flex items-center justify-between w-full">
+           <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(251,191,36,0.2)] group-hover:-rotate-12 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <span class="text-amber-400 font-mono text-xs font-bold px-2 py-1 bg-amber-500/10 rounded">UI/UX</span>
+        </div>
+        
+        <div class="relative z-10">
+          <h3 class="text-lg font-display font-bold text-white">Diseño</h3>
+          <p class="text-zinc-400 text-xs mt-1">Figma, Prototyping</p>
+        </div>
+      </div>
+
     </div>
-    
+
+    <!-- Tech Stack Logos Marquee (below bento) -->
+    <div class="mt-4 p-4 rounded-3xl bg-white/5 border border-white/10 flex flex-wrap justify-center gap-6 md:gap-12 reveal delay-500 backdrop-blur-sm">
+       {techStack.map((tech) => (
+         <img src={tech.icon} alt={tech.name} title={tech.name} class="w-8 h-8 opacity-40 hover:opacity-100 hover:scale-125 transition-all duration-300 grayscale hover:grayscale-0 cursor-help" loading="lazy" />
+       ))}
+    </div>
+
   </div>
 </section>
