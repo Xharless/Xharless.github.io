@@ -112,16 +112,23 @@ const navLinks = [
     font-weight: 500;
     letter-spacing: -0.01em;
     border-radius: 100px;
-    transition: color 0.2s ease, background 0.2s ease;
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .nav-link:hover {
     color: var(--text-primary);
     background: var(--surface-hover);
+    transform: translateY(-1px);
+  }
+
+  .nav-link:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   .nav-link.active {
     color: var(--text-primary);
+    background: var(--surface-active);
   }
 
   .nav-cta {
@@ -133,13 +140,18 @@ const navLinks = [
     font-weight: 600;
     border-radius: 100px;
     flex-shrink: 0;
-    transition: opacity 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
     letter-spacing: -0.01em;
   }
 
   .nav-cta:hover {
-    opacity: 0.88;
-    box-shadow: 0 0 24px var(--accent-glow);
+    transform: scale(1.02) translateY(-1px);
+    box-shadow: 0 0 32px var(--accent-glow);
+  }
+
+  .nav-cta:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
   }
 
   .mobile-menu-btn {

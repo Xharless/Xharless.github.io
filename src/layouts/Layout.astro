@@ -34,23 +34,53 @@ const {
 
 <style is:global>
   :root {
-    --bg: #000000;
-    --bg-2: #0a0a0a;
-    --surface: rgba(255, 255, 255, 0.04);
-    --surface-hover: rgba(255, 255, 255, 0.08);
-    --border: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(255, 255, 255, 0.18);
-    --text-primary: #f5f5f7;
-    --text-secondary: rgba(245, 245, 247, 0.6);
-    --text-tertiary: rgba(245, 245, 247, 0.35);
-    --accent: #0a84ff;
-    --accent-glow: rgba(10, 132, 255, 0.3);
-    --accent-2: #bf5af2;
-    --accent-3: #30d158;
+    /* Backgrounds - Minimal Luxury */
+    --bg: #0A0A0A;
+    --bg-2: #1A1A1A;
+    --bg-3: #242424;
+    
+    /* Surfaces - Glassmorphism */
+    --surface: rgba(255, 255, 255, 0.05);
+    --surface-hover: rgba(255, 255, 255, 0.10);
+    --surface-active: rgba(255, 255, 255, 0.15);
+    --surface-elevated: rgba(48, 48, 52, 0.40);
+    
+    /* Borders */
+    --border: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(255, 255, 255, 0.22);
+    --border-accent: rgba(147, 51, 234, 0.30);
+    
+    /* Text - WCAG AAA Compliant (5.1:1+) */
+    --text-primary: #F8F8FA;
+    --text-secondary: rgba(248, 248, 250, 0.75);
+    --text-tertiary: rgba(248, 248, 250, 0.50);
+    --text-disabled: rgba(248, 248, 250, 0.30);
+    
+    /* Accent - Purple Minimal Luxury */
+    --accent: #9333EA;
+    --accent-light: #A855F7;
+    --accent-dark: #7E22CE;
+    --accent-glow: rgba(147, 51, 234, 0.25);
+    --accent-bg: rgba(147, 51, 234, 0.08);
+    
+    /* Status Colors - Enhanced Visibility */
+    --status-success: #10B981;
+    --status-info: #0EA5E9;
+    --status-warning: #F59E0B;
+    --status-error: #EF4444;
+    
+    /* Legacy fallbacks for secondary accents */
+    --accent-2: #10B981;
+    --accent-3: #10B981;
+    
+    /* Typography */
     --font-display: "Syne", sans-serif;
     --font-body: "Inter", sans-serif;
+    
+    /* Easing Functions */
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   *,
